@@ -1,0 +1,19 @@
+<%- include('partials/headerMain', { session: session }) %>
+
+<h2>All Notes</h2>
+
+<% if (notes.length === 0) { %>
+  <p>No notes yet.</p>
+<% } else { %>
+  <ul>
+    <% notes.forEach(note => { %>
+      <li>
+        <h3><%= note.title %></h3>
+        <p><%= note.body %></p>
+        <small>Posted on <%= note.datePosted.toDateString() %></small>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include('partials/footer') %>

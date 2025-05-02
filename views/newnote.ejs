@@ -1,0 +1,11 @@
+<%- include('partials/headerMain', { session: session }) %>
+
+<h2>New Note</h2>
+<form action="/newnote" method="POST">
+  <input type="text" name="author" placeholder="Write a cool nickname" required>
+  <input type="text" name="title" placeholder="Note title" required>
+  <textarea name="body" placeholder="Write your note..." rows="5" required></textarea>
+  <button type="submit">Save Note</button>
+</form>
+
+<%- include('partials/footer') %>

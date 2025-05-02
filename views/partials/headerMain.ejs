@@ -1,0 +1,16 @@
+<header>
+  <link rel="stylesheet" href="/css/style.css">
+    <h1>Welcome to NoteVault</h1>
+    <nav>
+      <% if (session.userId) { %>
+        <a href="/notes">Home</a>
+        <a href="/newnote">New Note</a>
+        <a href="/secret">Secret Notes</a>
+        <a href="/logout">Logout</a>
+      <% } else { %>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Login</a>
+      <% } %>
+    </nav>
+  </header>
+  
