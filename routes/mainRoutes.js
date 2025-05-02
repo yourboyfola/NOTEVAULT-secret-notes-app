@@ -93,6 +93,11 @@ const newSecret = async (req, res) => {
 
 const viewSecrets = async (req, res) => {
     const key = req.body.key;
+
+    if (!mongoose.Types.ObjectId.isValid(key)) {
+        return res.send("Invalid secret key format.");
+    }
+
     const note = await secretNote.findById(key);
     res.render('viewSecret', { note, session: req.session });
 };
